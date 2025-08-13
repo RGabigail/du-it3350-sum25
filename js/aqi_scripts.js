@@ -47,8 +47,10 @@
     setAQI({ aqiValue, city: "Pittsburgh", status, iconUrl });
   }
 
+  // Submit handler with edge-case checks
   function handleCustomAQI() {
-  
+    // Uncomment to step through in DevTools:
+    // debugger;
 
     const inputEl = document.getElementById("aqiInput");
     const raw = inputEl.value;
