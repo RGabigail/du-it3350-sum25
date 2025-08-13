@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>AQI Widget</title>
-  <link rel="stylesheet" href="../css/aqi_style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../css/aqi_style.css" />
 </head>
 <body>
-  <div class="widget" id="aqiWidget">
-    <h2 id="city">City: --</h2>
-    <p id="aqi">AQI: --</p>
-    <p id="status">Status: --</p>
-    <img id="icon" src="" alt="" style="width: 50px; display: none;">
-    <input type="text" id="aqiInput" placeholder="Enter AQI (0–300)">
-    <button onclick="handleCustomAQI()">Submit</button>
-    <button onclick="loadAQIData()">Random</button>
-  </div>
+  <main class="viewport">
+    <div class="widget" id="aqiWidget">
+      <h2 id="city">City: --</h2>
+      <p id="aqi">AQI: --</p>
+      <p id="status">Status: --</p>
+      <img id="icon" alt="" style="width: 56px; display: none;" />
+
+      <div class="controls">
+        <input type="text" id="aqiInput" placeholder="Enter AQI (0–300)" />
+        <button id="btnSubmit" type="button">Submit</button>
+        <button id="btnRandom" type="button">Random</button>
+      </div>
+    </div>
+  </main>
 
   <script src="../js/aqi_script.js"></script>
 </body>
