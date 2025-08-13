@@ -10,12 +10,23 @@
   <main class="viewport">
     <div class="widget" id="aqiWidget">
       <h2 id="city">City: --</h2>
-      <p id="aqi">AQI: --</p>
-      <p id="status">Status: --</p>
-      <img id="icon" alt="" style="width: 56px; display: none;" />
+
+      <!-- Live-updating values for screen readers -->
+      <p id="aqi" aria-live="polite">AQI: --</p>
+      <p id="status" aria-live="polite">Status: --</p>
+
+      <!-- Descriptive alt for accessibility -->
+      <img id="icon" alt="Air quality status icon" style="width: 56px; display: none;" />
 
       <div class="controls">
-        <input type="text" id="aqiInput" placeholder="Enter AQI (0–300)" />
+        <!-- Hidden label for SR; keeps visual clean -->
+        <label for="aqiInput" class="sr-only">Enter AQI value</label>
+        <input
+          type="text"
+          id="aqiInput"
+          placeholder="Enter AQI (0–300)"
+          inputmode="numeric"
+        />
         <button id="btnSubmit" type="button">Submit</button>
         <button id="btnRandom" type="button">Random</button>
       </div>
