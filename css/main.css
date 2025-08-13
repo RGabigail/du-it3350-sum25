@@ -15,7 +15,6 @@ iframe.fullcard {
   display: block;
 }
 
-/* (Optional) If your card has a .widget container inside, make it scale nicely */
 .widget {
   box-sizing: border-box;
   padding: clamp(12px, 2vw, 32px);
@@ -35,3 +34,4 @@ iframe.fullcard {
 img#icon {
   width: clamp(32px, 6vw, 64px);
 }
+
