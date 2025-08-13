@@ -1,37 +1,16 @@
-/* Full-viewport canvas */
-body.fullpage {
+/* Full-page layout for a single card */
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
 }
 
-/* The single card fills entire screen */
-iframe.fullcard {
-  border: 0;
-  width: 100vw;
-  height: 100vh;
+.card-full {
   display: block;
+  width: 100vw;
+  height: 100vh;
+  border: 0;
 }
 
-.widget {
-  box-sizing: border-box;
-  padding: clamp(12px, 2vw, 32px);
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.widget h2 {
-  font-size: clamp(1.1rem, 3vw, 2rem);
-}
-
-.widget p,
-.widget input,
-.widget button {
-  font-size: clamp(0.9rem, 2.2vw, 1.2rem);
-}
-img#icon {
-  width: clamp(32px, 6vw, 64px);
-}
-
+/* Optional: prevent scrollbars on small rounding differences */
+body { overflow: hidden; }
