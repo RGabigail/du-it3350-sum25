@@ -1,37 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>AQI Widget</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="../css/aqi_style.css" />
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    .sr-only{position:absolute!important;width:1px;height:1px;margin:-1px;
+      overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+    .aqi-card{max-width:min(92vw,520px);margin:clamp(16px,4vw,32px) auto;
+      padding:clamp(16px,3vw,24px);border-radius:16px;box-shadow:0 6px 24px rgba(0,0,0,.12);background:#fff;}
+  </style>
 </head>
 <body>
-  <main class="viewport">
-    <div class="widget" id="aqiWidget">
-      <h2 id="city">City: --</h2>
+  <div class="aqi-card">
+    <h3>City: <span id="cityName">--</span></h3>
+    <p>AQI: <span id="aqiVal">--</span></p>
 
-      <!-- Live-updating values for screen readers -->
-      <p id="aqi" aria-live="polite">AQI: --</p>
-      <p id="status" aria-live="polite">Status: --</p>
+    <p id="aqiStatus" role="status" aria-live="polite">Status: --</p>
+    <img id="icon" src="" alt="" width="32" height="32" />
 
-      <!-- Descriptive alt for accessibility -->
-      <img id="icon" alt="Air quality status icon" style="width: 56px; display: none;" />
+    <form id="aqiForm" aria-describedby="aqiHelp">
+      <label for="aqiInput" class="sr-only">Air Quality Index (0–500)</label>
+      <input id="aqiInput" name="aqi" type="number" inputmode="numeric"
+             min="0" max="500" step="1" />
+      <p id="aqiHelp" class="sr-only">Enter a number from 0 to 500.</p>
 
-      <div class="controls">
-        <!-- Hidden label for SR; keeps visual clean -->
-        <label for="aqiInput" class="sr-only">Enter AQI value</label>
-        <input
-          type="text"
-          id="aqiInput"
-          placeholder="Enter AQI (0–300)"
-          inputmode="numeric"
-        />
-        <button id="btnSubmit" type="button">Submit</button>
-        <button id="btnRandom" type="button">Random</button>
-      </div>
-    </div>
-  </main>
+      <button type="submit" class="btn">Submit</button>
+      <button type="button" id="randomBtn" class="btn btn--ghost">Random</button>
+    </form>
+  </div>
 
   <script src="../js/aqi_script.js"></script>
 </body>
